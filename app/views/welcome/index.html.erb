@@ -2,4 +2,6 @@
 <p>Find me in app/views/welcome/index.html.erb</p>
 <p>Hello</p>
 
-<%= @date %>
+<% if user_signed_in? %>
+    <%= link_to 'My Courses' , user_courses_path(current_user) %>
+<% end %>

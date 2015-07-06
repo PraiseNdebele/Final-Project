@@ -1,11 +1,12 @@
 class CoursesController < ApplicationController
   before_action :authenticate_user!
+  
   def index
     @courses = current_user.courses
   end
 
   def show
-    @course = Course.find params[:id]
+    @course = Course.find(params[:id])
   end
 
   def new
@@ -18,7 +19,6 @@ class CoursesController < ApplicationController
 
   def create
     @course = current_user.courses.create(course_params)
-    #build?
     render 'show'
   end
 
@@ -32,7 +32,7 @@ class CoursesController < ApplicationController
   end
 
   def destroy
-    @course = current_user.courses.find params[:id]
+    @course = current_user.courses.find(params[:id])
     @course.destroy
     redirect_to user_courses_path(current_user)
   end
