@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706093815) do
+ActiveRecord::Schema.define(version: 20150706131849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,10 @@ ActiveRecord::Schema.define(version: 20150706093815) do
     t.boolean  "public"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "courses", ["user_id"], name: "index_courses_on_user_id", using: :btree
 
   create_table "goals", force: :cascade do |t|
     t.datetime "date"
@@ -32,7 +35,12 @@ ActiveRecord::Schema.define(version: 20150706093815) do
     t.integer  "deviation"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "user_id"
+    t.integer  "course_id"
   end
+
+  add_index "goals", ["course_id"], name: "index_goals_on_course_id", using: :btree
+  add_index "goals", ["user_id"], name: "index_goals_on_user_id", using: :btree
 
   create_table "importants", force: :cascade do |t|
     t.datetime "date"
@@ -40,7 +48,12 @@ ActiveRecord::Schema.define(version: 20150706093815) do
     t.text     "remarks"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "course_id"
   end
+
+  add_index "importants", ["course_id"], name: "index_importants_on_course_id", using: :btree
+  add_index "importants", ["user_id"], name: "index_importants_on_user_id", using: :btree
 
   create_table "tdls", force: :cascade do |t|
     t.date     "date"
@@ -48,7 +61,12 @@ ActiveRecord::Schema.define(version: 20150706093815) do
     t.boolean  "complete"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "course_id"
   end
+
+  add_index "tdls", ["course_id"], name: "index_tdls_on_course_id", using: :btree
+  add_index "tdls", ["user_id"], name: "index_tdls_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -76,4 +94,11 @@ ActiveRecord::Schema.define(version: 20150706093815) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "courses", "users"
+  add_foreign_key "goals", "courses"
+  add_foreign_key "goals", "users"
+  add_foreign_key "importants", "courses"
+  add_foreign_key "importants", "users"
+  add_foreign_key "tdls", "courses"
+  add_foreign_key "tdls", "users"
 end
