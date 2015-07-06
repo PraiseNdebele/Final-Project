@@ -1,0 +1,25 @@
+<h1>Tdls#show</h1>
+<p>Find me in app/views/tdls/show.html.erb</p>
+
+<table class = "table">
+	<tr>
+		<th>Date</th>
+		<th>Task</th>
+		<th>Completed</th>
+		<th colspan=''></th>
+	</tr>
+<tbody>	
+	<tr>
+		<td><%= @tdl.date %></td>
+		<td><%= @tdl.task %></td> 
+		<td><%= @tdl.complete %></td>  		
+	</tr>	
+</tbody>
+</table>
+
+</br>
+
+<%= link_to 'Add To-do-list', new_course_tdl_path(@course) %> | 
+<%= link_to 'Back', course_tdls_path(@course) %>
+
+

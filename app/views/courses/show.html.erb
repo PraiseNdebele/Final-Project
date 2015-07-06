@@ -5,4 +5,5 @@
 </br>
 <%= link_to 'Edit', edit_user_course_path(current_user, @course) %> | 
 <%= link_to 'Delete', user_course_path(current_user, @course), method: :delete, data: {confirm: 'Are you sure?'} %> |
-<%= link_to 'Back', user_courses_path(current_user) %>
+<%= link_to 'Back', user_courses_path(current_user) %> |
+<%= link_to 'To do list', course_tdls_path(current_course) %>
