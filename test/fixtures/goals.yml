@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2015-07-06 11:29:21
+  details: MyText
+  projected_mark: 1
+  actual_mark: 1
+  deviation: 1
+
+two:
+  date: 2015-07-06 11:29:21
+  details: MyText
+  projected_mark: 1
+  actual_mark: 1
+  deviation: 1
