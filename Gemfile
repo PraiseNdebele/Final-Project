@@ -28,6 +28,8 @@ gem 'devise'
 gem 'simple_form'
 gem "twitter-bootstrap-rails"
 gem "bootstrap-glyphicons"
+gem "paperclip", "~> 4.3"
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

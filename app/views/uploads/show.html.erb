@@ -3,13 +3,9 @@
 
 
 <table class = "table">
-	<tr>
-		<th>Document</th>
-		<th colspan='2'></th>
-	</tr>
 <tbody>	
 	<tr>
-		<td><%= @upload.document %></td>
+		<td><%= link_to "file", @upload.document.url, target: "_blank" %></td>
 	</tr>	
 </tbody>
 </table>

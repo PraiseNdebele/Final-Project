@@ -10,7 +10,8 @@
 <tbody>	
 	<% @uploads.each do |upload| %>
 	<tr>
-		<td><%= upload.document %></td>
+		<td><%= upload.document_file_name %></td>
+		<td><%= link_to "Show", upload.document.url, target: "_blank" %></td>
 		<td><%= link_to 'Edit', edit_course_upload_path(@course, upload) %></td>
 		 <td><%= link_to 'Delete', course_upload_path(@course, upload),
           method: :delete,
@@ -24,3 +25,5 @@
 
 <%= link_to 'Add a upload', new_course_upload_path(@course) %> | 
 <%= link_to 'Back', user_courses_path(current_user) %>
+
+

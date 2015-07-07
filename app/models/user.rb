@@ -5,8 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
   has_many :courses, dependent: :destroy
-  has_many :tdls, through: :courses
-  has_many :goals, through: :courses
-  has_many :importants, through: :courses
-  has_many :uploads, through: :courses
+  has_many :tdls, through: :courses,dependent: :destroy
+  has_many :goals, through: :courses, dependent: :destroy
+  has_many :importants, through: :courses, dependent: :destroy
+  has_many :uploads, through: :courses, dependent: :destroy
+
 end

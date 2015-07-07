@@ -2,6 +2,8 @@ class UploadsController < ApplicationController
   def index    
     @course = Course.find(params[:course_id])
     @uploads = @course.uploads.all
+     
+    @upload = @course.uploads.find(params[:id])
   end
 
   def show

@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
     @importants = @course.importants.all ##
     @goals = @course.goals.all ##
     @uploads = @course.uploads.all ##
-    
+
   end
 
   def new
