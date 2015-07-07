@@ -7,6 +7,7 @@ class TdlsController < ApplicationController
   def show
     @course = Course.find(params[:course_id])
     @tdl = @course.tdls.find(params[:id])
+    @tdls = @course.tdls.all ##
   end
 
   def new
@@ -24,7 +25,8 @@ class TdlsController < ApplicationController
     @course = Course.find(params[:course_id])
     @tdl = @course.tdls.create(tdl_params)
     @tdls = @course.tdls.all
-    render 'index'
+    # render 'index'
+    redirect_to user_course_path(current_user, @course) ####
   end
 
   def update
@@ -34,7 +36,8 @@ class TdlsController < ApplicationController
     @tdls = @course.tdls.all
 
     if @tdl.update(tdl_params)
-      render 'index'
+      # render 'index'
+      redirect_to user_course_path(current_user, @course) 
     else
       render 'edit'
     end
@@ -44,7 +47,8 @@ class TdlsController < ApplicationController
     @course = Course.find(params[:course_id])
     @tdl = @course.tdls.find(params[:id])
     @tdl.destroy
-    redirect_to course_tdls_path(@course)
+    # redirect_to course_tdls_path(@course)
+    redirect_to user_course_path(current_user, @course)
   end
 
   private

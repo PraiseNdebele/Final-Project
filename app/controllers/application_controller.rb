@@ -4,8 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   #before_action :authenticate_user!
 
-  def current_course
-  	@current_course = Course.find(params[:id])
-  end
-  helper_method :current_course
+  # def current_course
+  # 	@current_course = Course.find(params[:id])
+  # end
+  # helper_method :current_course
+  
 end

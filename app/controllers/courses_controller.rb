@@ -7,6 +7,7 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+    @tdls = @course.tdls.all ##
   end
 
   def new
@@ -15,17 +16,17 @@ class CoursesController < ApplicationController
 
   def edit
     @course = current_user.courses.find(params[:id])
-    end
+  end
 
   def create
     @course = current_user.courses.create(course_params)
-    render 'show'
+    redirect_to user_course_path(current_user, @course)
   end
 
   def update
     @course = current_user.courses.find(params[:id])
     if @course.update(course_params)
-      render 'show'
+      redirect_to user_course_path(current_user, @course)
     else
       render 'edit'
     end
