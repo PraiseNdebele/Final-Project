@@ -8,6 +8,7 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params[:id])
     @tdls = @course.tdls.all ##
+    @importants = @course.importants.all ##
   end
 
   def new

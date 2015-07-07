@@ -1,0 +1,28 @@
+<h1>Importants#index</h1>
+
+<table class = "table">
+	<tr>
+		<th>Date</th>
+		<th>Event</th>
+		<th>Remarks</th>
+		<th colspan='2'></th>
+	</tr>
+<tbody>	
+	<% @importants.each do |important| %>
+	<tr>
+		<td><%= important.date %></td>
+		<td><%= important.event %></td> 
+		<td><%= important.remarks %></td>
+		<td><%= link_to 'Edit', edit_course_important_path(@course, important) %></td>
+		 <td><%= link_to 'Delete', course_important_path(@course, important),
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %></td>		
+	</tr>
+	<% end %>	
+</tbody>
+</table>
+
+</br>
+
+<%= link_to 'Add an event', new_course_important_path(@course) %> | 
+<%= link_to 'Back', user_courses_path(current_user) %>

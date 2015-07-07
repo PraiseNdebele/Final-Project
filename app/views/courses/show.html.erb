@@ -1,6 +1,6 @@
 <h1>Courses#show</h1>
 
-<strong><%= @course.name %></strong>
+<h2><%= @course.name %></h2>
 
 </br>
 <%= link_to 'Edit', edit_user_course_path(current_user, @course) %> | 
@@ -10,3 +10,6 @@
 
 
 <%= render 'tdls/index' %>
+
+
+<%= render 'importants/index' %>

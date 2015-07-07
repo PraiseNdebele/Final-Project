@@ -10,4 +10,8 @@ Rails.application.routes.draw do
   resources :courses, only: [] do
   	resources :tdls
   end
+
+  resources :courses, only: [] do
+    resources :importants
+  end
 end

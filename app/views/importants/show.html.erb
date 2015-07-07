@@ -1,0 +1,25 @@
+<h1>Importants#show</h1>
+<p>Find me in app/views/importants/show.html.erb</p>
+
+<table class = "table">
+	<tr>
+		<th>Date</th>
+		<th>Event/th>
+		<th>Remarks</th>
+		<th colspan=''></th>
+	</tr>
+<tbody>	
+	<tr>
+		<td><%= @important.date %></td>
+		<td><%= @important.event %></td> 
+		<td><%= @important.remarks %></td>  		
+	</tr>	
+</tbody>
+</table>
+
+</br>
+
+<%= link_to 'Add an event', new_course_important_path(@course) %> | 
+<%= link_to 'Back', course_importants_path(@course) %>
+
+
