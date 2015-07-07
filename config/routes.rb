@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   resources :courses, only: [] do
     resources :importants
   end
+
+  resources :courses, only: [] do
+    resources :goals
+  end
 end

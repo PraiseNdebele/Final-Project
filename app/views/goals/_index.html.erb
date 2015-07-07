@@ -1,0 +1,33 @@
+<h1>Goals#index</h1>
+
+<table class = "table">
+	<tr>
+		<th>Date</th>
+		<th>Details</th>
+		<th>Projected mark</th>
+		<th>Actual mark</th>
+		<th>Deviation</th>
+		<th colspan='2'></th>
+	</tr>
+<tbody>	
+	<% @goals.each do |goal| %>
+	<tr>
+		<td><%= goal.date %></td>
+		<td><%= goal.details %></td> 
+		<td><%= goal.projected_mark %></td>
+		<td><%= goal.actual_mark %></td>
+		<% deviation = goal.actual_mark - goal.projected_mark %>
+		<td><%= deviation %></td>
+		<td><%= link_to 'Edit', edit_course_goal_path(@course, goal) %></td>
+		 <td><%= link_to 'Delete', course_goal_path(@course, goal),
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %></td>		
+	</tr>
+	<% end %>	
+</tbody>
+</table>
+
+</br>
+
+<%= link_to 'Add a goal', new_course_goal_path(@course) %> | 
+<%= link_to 'Back', user_courses_path(current_user) %>

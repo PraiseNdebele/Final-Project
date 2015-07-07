@@ -1,0 +1,29 @@
+<h1>Goals#show</h1>
+<p>Find me in app/views/goals/show.html.erb</p>
+
+<table class = "table">
+	<tr>
+		<th>Date</th>
+		<th>Details/th>
+		<th>Projected mark</th>
+		<th>Actual mark</th>
+		<th>Deviation</th>
+		<th colspan='2'></th>
+	</tr>
+<tbody>	
+	<tr>
+		<td><%= @goal.date %></td>
+		<td><%= @goal.event %></td> 
+		<td><%= @goal.projected_mark %></td>
+		<td><%= @goal.actual_mark %></td>  	
+		<td><%= @deviation %></td>  	
+	</tr>	
+</tbody>
+</table>
+
+</br>
+
+<%= link_to 'Add an event', new_course_goal_path(@course) %> | 
+<%= link_to 'Back', course_goals_path(@course) %>
+
+

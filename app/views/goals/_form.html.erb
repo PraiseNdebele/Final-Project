@@ -1,0 +1,24 @@
+<div class= "container">
+	<%= simple_form_for([@course, @goal]) do |f| %>
+
+	  <div class="form-inline" >
+	    <%= f.input :date %>
+	 </div>
+	 <div class="form-inputs">   
+	    <%= f.input :details , required: true, autofocus: true %>
+	    <%= f.input :projected_mark %>
+	    <%= f.input :actual_mark %>
+	  </div>
+
+	<% if @edit %>
+		  <div class="form-actions">
+		    <%= f.button :submit, "Update" %>
+		  </div>
+		 <% else %>
+		   <div class="form-actions">
+		    <%= f.button :submit, "Create" %>
+		  </div>
+	<% end %>
+
+	<% end %>
+</div>
