@@ -18,4 +18,8 @@ Rails.application.routes.draw do
   resources :courses, only: [] do
     resources :goals
   end
+
+  resources :courses, only: [] do
+    resources :uploads
+  end
 end

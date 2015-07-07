@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
   has_many :tdls, through: :courses
   has_many :goals, through: :courses
   has_many :importants, through: :courses
+  has_many :uploads, through: :courses
 end

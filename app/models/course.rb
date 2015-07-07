@@ -3,4 +3,5 @@ class Course < ActiveRecord::Base
 	has_many :goals, dependent: :destroy
 	has_many :importants, dependent: :destroy
 	has_many :tdls, dependent: :destroy
+	has_many :uploads, dependent: :destroy
 end

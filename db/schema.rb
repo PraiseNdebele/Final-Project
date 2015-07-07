@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706131849) do
+ActiveRecord::Schema.define(version: 20150707142418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,17 @@ ActiveRecord::Schema.define(version: 20150706131849) do
   add_index "tdls", ["course_id"], name: "index_tdls_on_course_id", using: :btree
   add_index "tdls", ["user_id"], name: "index_tdls_on_user_id", using: :btree
 
+  create_table "uploads", force: :cascade do |t|
+    t.string   "document"
+    t.integer  "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  add_index "uploads", ["course_id"], name: "index_uploads_on_course_id", using: :btree
+  add_index "uploads", ["user_id"], name: "index_uploads_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -101,4 +112,6 @@ ActiveRecord::Schema.define(version: 20150706131849) do
   add_foreign_key "importants", "users"
   add_foreign_key "tdls", "courses"
   add_foreign_key "tdls", "users"
+  add_foreign_key "uploads", "courses"
+  add_foreign_key "uploads", "users"
 end

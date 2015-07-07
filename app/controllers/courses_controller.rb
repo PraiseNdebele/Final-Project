@@ -10,6 +10,7 @@ class CoursesController < ApplicationController
     @tdls = @course.tdls.all ##
     @importants = @course.importants.all ##
     @goals = @course.goals.all ##
+    @uploads = @course.uploads.all ##
     
   end
 

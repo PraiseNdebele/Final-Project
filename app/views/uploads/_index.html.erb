@@ -1,0 +1,26 @@
+<h1>Uploads#index</h1>
+<p>Find me in app/views/uploads/index.html.erb</p>
+
+
+<table class = "table">
+	<tr>
+		<th>Document</th>
+		<th colspan='2'></th>
+	</tr>
+<tbody>	
+	<% @uploads.each do |upload| %>
+	<tr>
+		<td><%= upload.document %></td>
+		<td><%= link_to 'Edit', edit_course_upload_path(@course, upload) %></td>
+		 <td><%= link_to 'Delete', course_upload_path(@course, upload),
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %></td>		
+	</tr>
+	<% end %>	
+</tbody>
+</table>
+
+</br>
+
+<%= link_to 'Add a upload', new_course_upload_path(@course) %> | 
+<%= link_to 'Back', user_courses_path(current_user) %>

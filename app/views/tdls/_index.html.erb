@@ -12,7 +12,7 @@
 	<tr>
 		<td><%= tdl.date %></td>
 		<td><%= tdl.task %></td> 
-		<td><%= tdl.complete %></td>
+		<td><% if tdl.complete %><i class="glyphicon glyphicon-ok"></i><% else %><i class="glyphicon glyphicon-remove"></i><% end %></td>
 		<td><%= link_to 'Edit', edit_course_tdl_path(@course, tdl) %></td>
 		 <td><%= link_to 'Delete', course_tdl_path(@course, tdl),
           method: :delete,
