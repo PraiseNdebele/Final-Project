@@ -2,7 +2,9 @@ class CoursesController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @courses = current_user.courses
+    user_id = params[:user_id].to_i
+    user = User.find(user_id)
+    @courses = user.courses
   end
 
   def show
