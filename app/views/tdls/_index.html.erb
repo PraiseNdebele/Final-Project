@@ -13,10 +13,12 @@
 		<td><%= tdl.date %></td>
 		<td><%= tdl.task %></td> 
 		<td><% if tdl.complete %><i class="glyphicon glyphicon-ok"></i><% else %><i class="glyphicon glyphicon-remove"></i><% end %></td>
+		<% if tdl.user == current_user %>
 		<td><%= link_to 'Edit', edit_course_tdl_path(@course, tdl) %></td>
 		 <td><%= link_to 'Delete', course_tdl_path(@course, tdl),
           method: :delete,
-          data: { confirm: 'Are you sure?' } %></td>		
+          data: { confirm: 'Are you sure?' } %></td>
+          <% end %>		
 	</tr>
 	<% end %>	
 </tbody>
@@ -24,4 +26,10 @@
 
 </br>
 
-<%= link_to 'Add To-do-list', new_course_tdl_path(@course) %>
+
+
+<% if @course.user == current_user  %>
+	<%= link_to 'Add To-do-list', new_course_tdl_path(@course) %>
+<% end %>
+
+

@@ -16,17 +16,18 @@
 		<td><%= goal.details %></td> 
 		<td><%= goal.projected_mark %></td>
 		<td><%= goal.actual_mark %></td>
-		<% deviation = goal.actual_mark - goal.projected_mark %>
-		<td><%= deviation %></td>
+		<% if goal.user == current_user %>
 		<td><%= link_to 'Edit', edit_course_goal_path(@course, goal) %></td>
 		 <td><%= link_to 'Delete', course_goal_path(@course, goal),
           method: :delete,
-          data: { confirm: 'Are you sure?' } %></td>		
+          data: { confirm: 'Are you sure?' } %></td>	
+          <% end %>	
 	</tr>
 	<% end %>	
 </tbody>
 </table>
 
 </br>
-
-<%= link_to 'Add a goal', new_course_goal_path(@course) %> 
+<% if @course.user == current_user  %>
+	<%= link_to 'Add a goal', new_course_goal_path(@course) %> 
+<% end %>

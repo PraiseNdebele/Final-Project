@@ -1,10 +1,11 @@
 <h1><%= @course.name %></h1>
 
 </br>
+<% if @course.user == current_user %>
 <%= link_to 'Edit', edit_user_course_path(current_user, @course) %> | 
 <%= link_to 'Delete', user_course_path(current_user, @course), method: :delete, data: {confirm: 'Are you sure?'} %> |
 <%= link_to 'Back', user_courses_path(current_user) %> 
-
+<% end %>
 
 
 <%= render 'tdls/index' %>
@@ -14,3 +15,5 @@
 <%= render 'goals/index' %>
 
 <%= render 'uploads/index' %>
+
+

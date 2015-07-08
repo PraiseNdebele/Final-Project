@@ -3,10 +3,12 @@
 <table class = "table">
 <tbody>
 	<% @courses.each do |course| %>
+		<% if course.public || course.user == current_user %>
 	<tr>
 		<td><%= course.name %></td> 
 		<td><%= link_to 'Show', user_course_path(current_user, course) %></td>
 	</tr>
+	<% end %>
 	<% end %>
 </tbody>
 </table>

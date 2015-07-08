@@ -13,15 +13,18 @@
 		<td><%= important.date %></td>
 		<td><%= important.event %></td> 
 		<td><%= important.remarks %></td>
+		<% if important.user == current_user %>
 		<td><%= link_to 'Edit', edit_course_important_path(@course, important) %></td>
 		 <td><%= link_to 'Delete', course_important_path(@course, important),
           method: :delete,
-          data: { confirm: 'Are you sure?' } %></td>		
+          data: { confirm: 'Are you sure?' } %></td>	
+          <% end %>	
 	</tr>
 	<% end %>	
 </tbody>
 </table>
 
 </br>
-
-<%= link_to 'Add an event', new_course_important_path(@course) %>
+<% if @course.user == current_user  %>
+	<%= link_to 'Add an event', new_course_important_path(@course) %>
+<% end %>

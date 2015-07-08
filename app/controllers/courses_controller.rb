@@ -9,10 +9,14 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+    user_id = params[:user_id].to_i
+    user = User.find(user_id)
+    @courses = user.courses
     @tdls = @course.tdls.all ##
     @importants = @course.importants.all ##
     @goals = @course.goals.all ##
     @uploads = @course.uploads.all ##
+    
 
   end
 

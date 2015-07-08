@@ -11,17 +11,20 @@
 	<tr>
 		<td><%= upload.document_file_name %></td>
 		<td><%= link_to "Show", upload.document.url, target: "_blank" %></td>
+		<% if upload.user == current_user %>
 		<td><%= link_to 'Edit', edit_course_upload_path(@course, upload) %></td>
 		 <td><%= link_to 'Delete', course_upload_path(@course, upload),
           method: :delete,
           data: { confirm: 'Are you sure?' } %></td>		
 	</tr>
-	<% end %>	
+	<% end %>
+	<% end %>
+
 </tbody>
 </table>
 
 </br>
-
+<% if @course.user == current_user  %>
 <%= link_to 'Upload a file', new_course_upload_path(@course) %>
-
+	<% end %>
 

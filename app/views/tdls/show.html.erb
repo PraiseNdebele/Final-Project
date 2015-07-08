@@ -1,6 +1,7 @@
 <h1>Tdls#show</h1>
 <p>Find me in app/views/tdls/show.html.erb</p>
 
+
 <table class = "table">
 	<tr>
 		<th>Date</th>
@@ -19,7 +20,9 @@
 
 </br>
 
-<%= link_to 'Add To-do-list', new_course_tdl_path(@course) %> | 
+	<% @courses.each do |course| %>
+		<% if course.user != current_user %>
+			<%= link_to 'Add To-do-list', new_course_tdl_path(@course) %> | 
 <%= link_to 'Back', course_tdls_path(@course) %>
 
 
