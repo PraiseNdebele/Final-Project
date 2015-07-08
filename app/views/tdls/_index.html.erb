@@ -11,14 +11,14 @@
 		<td><%= tdl.date %></td>
 		<td><%= tdl.task %></td> 
 		<% if tdl.complete %>
-			<%= link_to complete_path(@course, tdl), method: :patch, data: { confirm: 'Oops! Not yet completed.' } do %>
+			<td><%= link_to complete_path(@course, tdl), method: :patch, data: { confirm: 'Oops! Not yet completed.' } do %>
 				<i class="glyphicon glyphicon-ok"></i>
-			<% end %>
+			<% end %></td>
 			Complete
 		<% else %>
-			<%= link_to complete_path(@course, tdl), method: :patch, data: { confirm: 'Welldone!' } do %>
+			<td><%= link_to complete_path(@course, tdl), method: :patch, data: { confirm: 'Welldone!' } do %>
 				<i class="glyphicon glyphicon-remove"></i>
-			<% end %>
+			<% end %></td>
 			Pending
 		<% end %>
 		</td>
