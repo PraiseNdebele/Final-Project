@@ -1,0 +1,12 @@
+<table class = "table">
+<tbody>
+    <% @users.each do |user| %>
+    <tr>
+        <td><%= user.email %></td> 
+        <td><%= user.institution %></td> 
+        <td><%= user.major %></td> 
+        <td><%= user.career_field %></td> 
+    </tr>
+    <% end %>
+</tbody>
+</table>

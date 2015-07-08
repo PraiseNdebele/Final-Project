@@ -10,4 +10,9 @@ class User < ActiveRecord::Base
   has_many :importants, through: :courses, dependent: :destroy
   has_many :uploads, through: :courses, dependent: :destroy
 
+  def self.search(query)
+    User.where("institution LIKE ? or email LIKE ? or major LIKE ? or career_field LIKE ?", 
+    "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}")
+  end
 end
+

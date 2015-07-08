@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  get "/users/search" => 'users#search'
+
   resources :users, only: [] do
   	resources :courses
   end
