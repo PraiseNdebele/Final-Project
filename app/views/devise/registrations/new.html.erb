@@ -4,16 +4,19 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-	<%= f.input :firstname %>
-	<%= f.input :lastname %>
-	<%= f.input :graduation_year, required: true, :as => :date,:start_year => 2015,:end_year => 2030,:order => [:year] %>
-	<%= f.input :institution %>
-	<%= f.input :major %>
-	<%= f.input :career_field %>
-	<%= f.input :bio %>
-	<%= f.input :phone %> 
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+
+   <%= f.input :firstname, :label => "First Name", :required => true %>
+  <%= f.input :lastname, :label => "Last Name", :required => true %>
+  <%= f.input :avatar, as: :file %>
+  <%= f.input :institution, :required => true %>
+  <%= f.input :graduation_year, required: true, :as => :date,:start_year => 2015,:end_year => 2050,:order => [:year] %>
+  <%= f.input :major, :required => true  %>
+  <%= f.input :career_field,:label => "Career field", :required => true  %>
+  <%= f.input :bio, :label => "Short bio" %>
+  <%= f.input :phone %>
+  
+  <%= f.input :email, required: true, autofocus: true %>
+  <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
   </div>
 
@@ -23,4 +26,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
-
+</div>
