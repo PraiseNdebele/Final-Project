@@ -12,7 +12,11 @@
 	<tr>
 		<td><%= tdl.date %></td>
 		<td><%= tdl.task %></td> 
-		<td><% if tdl.complete %><i class="glyphicon glyphicon-ok"></i><% else %><i class="glyphicon glyphicon-remove"></i><% end %></td>
+
+			<%= simple_form_for([@course, tdl]) do |f| %>
+				<td><%= f.input :complete, method: :complete %></td>
+			<% end %>
+
 		<td><%= link_to 'Edit', edit_course_tdl_path(@course, tdl) %></td>
 		 <td><%= link_to 'Delete', course_tdl_path(@course, tdl),
           method: :delete,
@@ -25,3 +29,5 @@
 </br>
 
 <%= link_to 'Add To-do-list', new_course_tdl_path(@course) %>
+
+

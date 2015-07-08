@@ -7,12 +7,12 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-    @tdls = @course.tdls.all ##
-    @importants = @course.importants.all ##
-    @goals = @course.goals.all ##
-    @uploads = @course.uploads.all ##
+    @tdls = @course.tdls ##
+    @importants = @course.importants ##
+    @goals = @course.goals ##
+    @uploads = @course.uploads ##
     ##
-    @importants = @importants.sort_by &:date
+    @importants = @importants.order(:date).upcoming
     @next = @importants.first
 
   end
