@@ -13,9 +13,19 @@
 		<td><%= tdl.date %></td>
 		<td><%= tdl.task %></td> 
 
-			<%= simple_form_for([@course, tdl]) do |f| %>
-				<td><%= f.input :complete, method: :complete %></td>
+		<td>
+		<% if tdl.complete %>
+			<%= link_to complete_path(@course, tdl), method: :patch, data: { confirm: 'Mark as incomplete?' } do %>
+				<i class="glyphicon glyphicon-ok"></i>
 			<% end %>
+			Complete
+		<% else %>
+			<%= link_to complete_path(@course, tdl), method: :patch, data: { confirm: 'Mark as complete?' } do %>
+				<i class="glyphicon glyphicon-remove"></i>
+			<% end %>
+			Pending
+		<% end %>
+		</td>
 
 		<td><%= link_to 'Edit', edit_course_tdl_path(@course, tdl) %></td>
 		 <td><%= link_to 'Delete', course_tdl_path(@course, tdl),
