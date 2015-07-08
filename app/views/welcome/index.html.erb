@@ -3,6 +3,10 @@
 
 <% if user_signed_in? %>
     <%= link_to 'My Courses' , user_courses_path(current_user) %>
+    <strong><p> Upcoming event </p></strong>
+    <%= @next.date %>
+    <%= @next.event %>
+    <%= @next.remarks%>
 <% end %>
 
 <!-- 

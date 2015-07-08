@@ -11,6 +11,9 @@ class CoursesController < ApplicationController
     @importants = @course.importants.all ##
     @goals = @course.goals.all ##
     @uploads = @course.uploads.all ##
+    ##
+    @importants = @importants.sort_by &:date
+    @next = @importants.first
 
   end
 
