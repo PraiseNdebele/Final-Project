@@ -9,6 +9,14 @@
     <%= @next.remarks%>
 <% end %>
 
+
+<%= form_tag users_search_path, method: :get do %>
+    <%= text_field_tag :q, params[:q] %>
+    <%= submit_tag "Search" %>
+<% end %>
+
+
+
 <!-- 
  <a href="#" class="btn btn-default" data-toggle="modal" data-target="#myModal">Sign Up</a>
 
@@ -39,3 +47,4 @@
 <div class="modal" id="myModal">
    <%= render :template => "devise/registrations/new" %>
 </div> -->
+
