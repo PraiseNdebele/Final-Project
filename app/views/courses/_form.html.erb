@@ -3,7 +3,7 @@
 
   <div class="form-inputs">
     <%= f.input :name, required: true, autofocus: true %>
-    <%= f.input :end_date, required: true, :as => :date,:start_year => 2015,:end_year => 2030,:order => [:year] %>
+    <%= f.input :end_date, :label => "Completion date", required: true, :as => :date,:start_year => 2015,:end_year => 2030,:order => [:year] %>
     <%= f.input :public, as: :boolean %>
   </div>
 

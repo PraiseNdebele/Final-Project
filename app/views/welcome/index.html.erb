@@ -1,14 +1,46 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
-<p>Hello</p>
+<h1>NoteBook</h1>
+
 
 <% if user_signed_in? %>
     <%= link_to 'My Courses' , user_courses_path(current_user) %>
 <% end %>
+
 
 <%= form_tag users_search_path, method: :get do %>
     <%= text_field_tag :q, params[:q] %>
     <%= submit_tag "Search" %>
 <% end %>
 
+
+
+<!-- 
+ <a href="#" class="btn btn-default" data-toggle="modal" data-target="#myModal">Sign Up</a>
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body row">
+            
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h2 class="text-center"><img src="http://www.minorschool.net/user-avatar/avatar-placeholder.jpg" class="img-circle"></br><br>Sign Up</h2>        
+            
+                <h6 class="text-center">COMPLETE THESE FIELDS TO SIGN UP</h6>
+                <form class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
+
+                <%= render "form" %>
+
+                </form>
+
+            </div>
+            
+                <h6 class="text-center"><a href="">Privacy is important to us. Click here to read why.</a></h6>
+            
+        </div>
+    </div>
+</div>
+
+<a class="btn" data-toggle="modal" href="#myModal" >Launch Modal</a>
+<div class="modal" id="myModal">
+   <%= render :template => "devise/registrations/new" %>
+</div> -->
 
