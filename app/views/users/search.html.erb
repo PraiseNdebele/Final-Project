@@ -6,7 +6,10 @@
         <td><%= user.institution %></td> 
         <td><%= user.major %></td> 
         <td><%= user.career_field %></td> 
+        <td><%= link_to 'View', user_courses_path(user[:id]) %></td>
     </tr>
     <% end %>
 </tbody>
 </table>
+
+

@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable
          
   has_many :courses, dependent: :destroy
   has_many :tdls, through: :courses,dependent: :destroy
@@ -14,10 +14,9 @@ class User < ActiveRecord::Base
 
 
   def self.search(query)
-    User.where("institution LIKE ? or email LIKE ? or major LIKE ? or career_field LIKE ?", 
-    "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}")
+    where("institution LIKE ? or email LIKE ? or major LIKE ? or career_field LIKE ?", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}")
+
+    # where("institution LIKE :query or email LIKE :query or major LIKE :query or career_field LIKE :query",  query: "%#{query}")
   end
 
-
 end
-
