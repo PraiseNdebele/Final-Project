@@ -43,6 +43,24 @@ class TdlsController < ApplicationController
     end
   end
 
+  def complete
+    course = Course.find(params[:course_id])
+    if current_user == course.user
+      @tdl = Tdl.find(params[:id])
+      if @tdl.complete
+        @tdl.complete = false
+        @tdl.save
+        redirect_to user_course_path(current_user, course)
+      else
+        @tdl.complete = true
+        @tdl.save
+        redirect_to user_course_path(current_user, course)
+      end     
+    else
+      redirect_to root_path, alert: "Sorry, you do not have access!"
+    end
+  end
+
   def destroy
     @course = Course.find(params[:course_id])
     @tdl = @course.tdls.find(params[:id])

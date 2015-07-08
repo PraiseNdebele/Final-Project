@@ -1,20 +1,26 @@
 <h1>Courses</h1>
 
-<table class = "table">
-<tbody>
-	<% @courses.each do |course| %>
-		<% if course.public || course.user == current_user %>
-	<tr>
-		<td><%= course.name %></td> 
-		<td><%= link_to 'Show', user_course_path(current_user, course) %></td>
-	</tr>
-	<% end %>
-	<% end %>
-</tbody>
-</table>
 
-</br>
+<% if @courses.empty? %>
+	<p>You currently have no courses</p>
+<% end %>
 
-<%= link_to 'New Course', new_user_course_path(current_user) %> | 
-<%= link_to 'Back', root_path %>
+	<table class = "table">
+	<tbody>
+		<% @courses.each do |course| %>
+			<% if course.public || course.user == current_user %>
+		<tr>
+			<td><%= course.name %></td> 
+			<td><%= link_to 'Show', user_course_path(current_user, course) %></td>
+		</tr>
+		<% end %>
+		<% end %>
+	</tbody>
+	</table>
+
+	</br>
+
+	<%= link_to 'Add Course', new_user_course_path(current_user) %> | 
+	<%= link_to 'Back', root_path %>
+
 

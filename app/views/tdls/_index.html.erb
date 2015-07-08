@@ -1,10 +1,8 @@
-<h2>To do list</h2>
-
 <table class = "table">
 	<tr>
 		<th>Date</th>
 		<th>Task</th>
-		<th>Completed</th>
+		<th>Status</th>
 		<th colspan='2'></th>
 	</tr>
 <tbody>	
@@ -12,7 +10,18 @@
 	<tr>
 		<td><%= tdl.date %></td>
 		<td><%= tdl.task %></td> 
-		<td><% if tdl.complete %><i class="glyphicon glyphicon-ok"></i><% else %><i class="glyphicon glyphicon-remove"></i><% end %></td>
+		<% if tdl.complete %>
+			<%= link_to complete_path(@course, tdl), method: :patch, data: { confirm: 'Oops! Not yet completed.' } do %>
+				<i class="glyphicon glyphicon-ok"></i>
+			<% end %>
+			Complete
+		<% else %>
+			<%= link_to complete_path(@course, tdl), method: :patch, data: { confirm: 'Welldone!' } do %>
+				<i class="glyphicon glyphicon-remove"></i>
+			<% end %>
+			Pending
+		<% end %>
+		</td>
 		<% if tdl.user == current_user %>
 		<td><%= link_to 'Edit', edit_course_tdl_path(@course, tdl) %></td>
 		 <td><%= link_to 'Delete', course_tdl_path(@course, tdl),
@@ -28,8 +37,9 @@
 
 
 
-<% if @course.user == current_user  %>
-	<%= link_to 'Add To-do-list', new_course_tdl_path(@course) %>
-<% end %>
 
+<% if @course.user == current_user  %>
+	<%= link_to 'Add', new_course_tdl_path(@course) %>
+<i class="glyphicon glyphicon-plus"></i>
+<% end %>
 

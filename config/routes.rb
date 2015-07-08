@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   get "/users/search" => 'users#search'
 
+  # complete action
+  patch '/courses/:course_id/tdl/:id' => 'tdls#complete', as: :complete
+
   resources :users, only: [] do
   	resources :courses
   end

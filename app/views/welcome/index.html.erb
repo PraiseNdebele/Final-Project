@@ -2,13 +2,23 @@
 
 
 <% if user_signed_in? %>
+
+    <%= form_tag users_search_path, method: :get do %>
+        <%= text_field_tag :q, params[:q] %>
+        <%= submit_tag "Search" %>
+    <% end %>
+
+    <% if @next %>
+        <strong><p> Upcoming event </p></strong>
+        <%= @next.date %>
+        <%= @next.event %>
+        <%= @next.remarks%>        
+    <% end %>
+
+    <br>
+
     <%= link_to 'My Courses' , user_courses_path(current_user) %>
-<% end %>
 
-
-<%= form_tag users_search_path, method: :get do %>
-    <%= text_field_tag :q, params[:q] %>
-    <%= submit_tag "Search" %>
 <% end %>
 
 
