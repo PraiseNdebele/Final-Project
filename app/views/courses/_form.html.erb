@@ -4,7 +4,7 @@
   <div class="form-inputs">
     <%= f.input :name, required: true, autofocus: true %>
     <%= f.input :end_date, :label => "Completion date", required: true, :as => :date,:start_year => 2015,:end_year => 2030,:order => [:year] %>
-    <%= f.input :public, as: :boolean %>
+    <%= f.input :public, :label => "Make this course public", as: :boolean %>
   </div>
 
   <div class="form-actions">
@@ -13,6 +13,4 @@
 <% end %>
 
 </div>
-
-
 
