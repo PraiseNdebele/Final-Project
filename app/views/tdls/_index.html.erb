@@ -13,13 +13,15 @@
 		<% if tdl.complete %>
 			<td><%= link_to complete_path(@course, tdl), method: :patch, data: { confirm: 'Oops! Not yet completed.' } do %>
 				<i class="glyphicon glyphicon-ok"></i>
-			<% end %></td>
+			<% end %>
 			Complete
+			</td>
 		<% else %>
 			<td><%= link_to complete_path(@course, tdl), method: :patch, data: { confirm: 'Welldone!' } do %>
 				<i class="glyphicon glyphicon-remove"></i>
-			<% end %></td>
+			<% end %>
 			Pending
+			</td>
 		<% end %>
 		</td>
 		<% if tdl.user == current_user %>

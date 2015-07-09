@@ -16,9 +16,10 @@ class CoursesController < ApplicationController
     @importants = @course.importants.all ##
     @goals = @course.goals.all ##
     @uploads = @course.uploads.all ##
+
     @importants = @importants.order(:date).upcoming
     @next = @importants.first
-
+    @importants = @course.importants.all
   end
 
   def new
