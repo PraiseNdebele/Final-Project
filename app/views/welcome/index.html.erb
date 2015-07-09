@@ -27,29 +27,29 @@
             <!-- LOGO -->
 
             <!-- TEXT BASED LOGO -->
-            <a class="navbar-brand" href="#">Single<span>Pro</span></a>
+            <a class="navbar-brand" href="#">Note<span>Book</span></a>
             
             <!-- IMG BASED LOGO  -->
             <!--  <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo"></a> --> 
             
                    
           </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#service">Services</a></li> 
-              <li><a href="#works">Works</a></li> 
-              <li><a href="#team">Team</a></li> 
-              <li><a href="#pricing">Pricing</a></li> 
-              <li><a href="#blog">Blog</a></li>               
-              <li><a href="#contact">Contacts</a></li>                           
-            </ul>           
-          </div><!--/.nav-collapse -->
           </div>     
         </nav>  
       </div>
       <!-- END MENU -->
+
+
+
+
+      <% if notice %>
+<p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+<p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+
 
       <!-- BEGIN SLIDER AREA-->
       <div class="slider_area">
@@ -62,12 +62,13 @@
               <!-- FIRST SLIDE OVERLAY -->
               <div class="slider_overlay"></div> 
               <!-- FIRST SLIDE MAIN IMAGE -->
-              <img src="img/full-slider/full-slide1.jpg" alt="img">
+              <img src="http://www.gradhacker.org/wp-content/uploads/gh_notebooks.jpg" alt="img">
               <!-- FIRST SLIDE CAPTION-->
               <div class="slider_caption">
-                <h2>Hi,We are Ultramodern Single pro</h2>
-                <p>we are a group of experienced designers and developers</p>
-                <a href="#" class="slider_btn">Who We are</a>              
+                <h2>Organize</h2>
+                <p>Small text description</p>
+                <%= link_to "Sign up", new_user_registration_path, :class => 'slider_btn'  %>
+                <%= link_to "Login", new_user_session_path, :class => 'slider_btn'  %>
               </div>
             </li>
 
@@ -76,12 +77,13 @@
               <!-- SECOND SLIDE OVERLAY -->
               <div class="slider_overlay"></div> 
               <!-- SECOND SLIDE MAIN IMAGE -->
-              <img src="img/full-slider/full-slide1.jpg" alt="img">
+              <img src="http://www.thestudentguide.com/images/uploads/timetable.jpg" alt="img">
               <!-- SECOND SLIDE CAPTION-->
               <div class="slider_caption">
-                <h2>Hi,We are Ultramodern Single pro</h2>
-                <p>we are a group of experienced designers and developers</p>
-                <a href="#" class="slider_btn">Who We are</a>
+                <h2>Plan</h2>
+                <p>Small text description</p>
+                <%= link_to "Sign up", new_user_registration_path, :class => 'slider_btn'  %>
+                <%= link_to "Login", new_user_session_path, :class => 'slider_btn'  %>   
               </div>
             </li>
 
@@ -90,12 +92,27 @@
               <!-- THIRD SLIDE OVERLAY -->
               <div class="slider_overlay"></div> 
               <!-- THIRD SLIDE MAIN IMAGE -->
-              <img src="img/full-slider/full-slide1.jpg" alt="img">
+              <img src="http://www.oreablog.com/wp-content/uploads/2015/01/o-GOAL-SETTING-facebook.jpg" alt="img">
               <!-- THIRD SLIDE CAPTION-->
               <div class="slider_caption">
-                <h2>we'll change your Idea of Design</h2>
-                <p>we are a group of experienced designers and developers</p>
-                <a href="#" class="slider_btn">Who We are</a>                 
+                <h2>Aim</h2>
+                <p>Small text description</p>
+                <%= link_to "Sign up", new_user_registration_path, :class => 'slider_btn'  %>
+                <%= link_to "Login", new_user_session_path, :class => 'slider_btn'  %>             
+              </div>
+            </li>
+
+            <li>
+              <!-- FOURTH SLIDE OVERLAY -->
+              <div class="slider_overlay"></div> 
+              <!-- FOURTH SLIDE MAIN IMAGE -->
+              <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT0v0lrFUOSA2Wu6lwqfqUlm3Gejg47vieiEd-5gXzOyCJHSDSKcw" alt="img">
+              <!-- FOURTH SLIDE CAPTION-->
+              <div class="slider_caption">
+                <h2>Share</h2>
+                <p>Small text description</p>
+                <%= link_to "Sign up", new_user_registration_path, :class => 'slider_btn'  %>
+                <%= link_to "Login", new_user_session_path, :class => 'slider_btn'  %>
               </div>
             </li>
           </ul>
@@ -118,5 +135,4 @@
       <!-- END SLIDER AREA -->
     </header>
     <!--=========== End HEADER SECTION ================--> 
-
 
