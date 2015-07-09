@@ -1,3 +1,4 @@
+ <h1>Courses</h1>
  <!--=========== BEGAIN TEAM SECTION ================-->
     <section id="team">
       <div class="container">
@@ -21,18 +22,8 @@
 
                     
                     <% if course.public || course.user == current_user %>
-                    <h5 class=""><%= course.name %></h5>
-                    <span><%= link_to 'Show', user_course_path(current_user, course) %></span>                        
-                    
-                    <div class="team_social">
-                      <a href="#"><i class="fa fa-facebook"></i></a>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
-                      <a href="#"><i class="fa fa-google-plus"></i></a>
-                      <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <h5 class=""><%= link_to course.name, user_course_path(current_user, course) %>                     
                   <% end %>
-                 
-
-                    </div>
                   </div>
                 </div> 
                 <% end %>                           
@@ -43,7 +34,18 @@
       </div>
     </section>
     <!--=========== END TEAM SECTION ================-->
- 
+          <div class="container">
+      
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <!-- BEGAIN ABOUT HEADING -->
+            <div class="heading">
+              <h2><%= link_to 'Add a course', new_user_course_path(current_user), :class => 'slider_btn'  %></h2>  
+
+</div>
+</div>
+</div>
+</div>
      <!--=========== BEGAIN SUBSCRIBE SECTION ================-->
     <section id="subscribe">
       <div class="container">
@@ -55,7 +57,6 @@
               <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
             </div>
             <!-- BEGAIN SUBSCRIVE FORM -->
-            <form class="subscribe_form">
               <div class="subscrive_group wow fadeInUp">
                 <%= form_tag users_search_path, method: :get do %>
                     <%= text_field_tag :q, params[:q], :class => "form-control subscribe_mail", :type => "text", :placeholder => "Search by name, email, major..." %>
@@ -69,30 +70,6 @@
       </div>
     </section>
     <!--=========== END SUBSCRIBE SECTION ================-->
-
-
- http://localhost:3000/users/search?utf8=%E2%9C%93&q=dan&commit=Search
- http://localhost:3000/users/search?utf8=%E2%9C%93&q=dan&commit=Search
-
-
-
- http://localhost:3000/users/6/courses?utf8=%E2%9C%93&q=dan&commit=Search
-
-
-
-
-<h1>Courses</h1>
-
-    <%= form_tag users_search_path, method: :get do %>
-        <%= text_field_tag :q, params[:q] %>
-        <%= submit_tag "Search" %>
-    <% end %>
-
-<br>
-
-
-
-
 
 
 
