@@ -27,3 +27,19 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 @import url(http://fonts.googleapis.com/css?family=Varela);
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+/*Overwrite bootstrap*/
+
+.alert-success {
+  z-index: 10000;
+  position: absolute;
+  width: 100%;
+}
+
+body {
+  background-color: #e5e5e5;
+}
+
+.single_team {
+  background-color: #fff;
+}
