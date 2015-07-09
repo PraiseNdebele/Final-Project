@@ -11,5 +11,10 @@ class ApplicationController < ActionController::Base
      devise_parameter_sanitizer.for(:sign_up) << :firstname << :lastname << :graduation_year << :institution << :major << :career_field << :bio << :phone
      devise_parameter_sanitizer.for(:account_update) << :firstname << :lastname << :graduation_year << :institution << :major << :career_field << :bio << :phone 
   end
+
+  def after_sign_in_path_for(resource)
+      user_courses_path(current_user)
+  end
+
 end
 
