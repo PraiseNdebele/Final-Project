@@ -12,10 +12,18 @@
  *
  *= require bootstrap/glyphicons
  *= require_tree .
- *= require_self
+ *= require bootstrap.min
+ *= require font-awesome.min
+ *= require superslides
+ *= require slick
+ *= require animate
+ *= require elastic_grid
+ *= require jquery.circliful
+ *= require themes/default-theme
+ *= require style 
+ *= require_self 
  */
 
-.img-circle {
-    width:200px;
-    height:200px;
-}
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Varela);
+@import url(http://fonts.googleapis.com/css?family=Montserrat);

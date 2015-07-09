@@ -13,6 +13,18 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+
+//= require wow.min
+//= require jquery.superslides.min
+//= require slick.min
+
+//= require jquery.circliful.min
+//= require modernizr.custom
+//= require classie
+//= require elastic_grid.min
+//= require portfolio_slider
+//= require custom
+
 //= require turbolinks
 //= require_tree .
 
@@ -20,3 +32,7 @@
 $(function () {
   $('[data-toggle="popover"]').popover()
 })
+
+
+
+
