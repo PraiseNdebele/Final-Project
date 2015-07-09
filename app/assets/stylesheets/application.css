@@ -38,6 +38,9 @@
 
 body {
   background-color: #e5e5e5;
+  background-image: url("http://aspireblog.org/wp-content/uploads/2013/04/chalkboard-660x330.jpg");
+  background-size: cover;
+  color: ghostwhite;
 }
 
 .single_team {
@@ -107,4 +110,25 @@ body {
   padding-right: 15px;
   padding-left: 15px;
   padding-bottom: 15px
+}
+h2 {
+  color: ghostwhite;
+  top: 50%;
+}
+
+
+th {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+  color: black;
+}
+
+td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+  color: black;
 }

@@ -2,17 +2,22 @@
 
         <div class="col-md-4 col-md-offset-4">
             <hr>
+            <% if @edit %>
             <h2 class="intro-text text-center">
-                <strong>Sign Up</strong>
+                <strong>Change event</strong>
             </h2>
+            <% else %>
+            <h2 class="intro-text text-center">
+                <strong>New event</strong>
+            </h2>
+            <% end %> 
             <hr>
             <div class = "sign-up  text-center" >
 		    	<%= simple_form_for([@course, @important]) do |f| %>
 
-			  <div class="form-inline" >
-			    <%= f.input :date %>
-			 </div>
-			 <div class="form-inputs">   
+			  <div class="form-inputs" >
+			    <%= f.input :date, :as => :date %>
+   
 			    <%= f.input :event, required: true, autofocus: true %>
 			    <%= f.input :remarks, :label => 'Details' %>
 			  </div>
@@ -32,3 +37,4 @@
             </div>
     </div>
 </div>
+
