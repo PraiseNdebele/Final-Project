@@ -1,23 +1,34 @@
-<div class= "container">
-	<%= simple_form_for([@course, @important]) do |f| %>
+<div class="row">
 
-	  <div class="form-inline" >
-	    <%= f.input :date %>
-	 </div>
-	 <div class="form-inputs">   
-	    <%= f.input :event, required: true, autofocus: true %>
-	    <%= f.input :remarks, :label => 'Details' %>
-	  </div>
+        <div class="col-md-4 col-md-offset-4">
+            <hr>
+            <h2 class="intro-text text-center">
+                <strong>Sign Up</strong>
+            </h2>
+            <hr>
+            <div class = "sign-up  text-center" >
+		    	<%= simple_form_for([@course, @important]) do |f| %>
 
-	<% if @edit %>
-		  <div class="form-actions">
-		    <%= f.button :submit, "Update" %>
-		  </div>
-		 <% else %>
-		   <div class="form-actions">
-		    <%= f.button :submit, "Create" %>
-		  </div>
-	<% end %>
+			  <div class="form-inline" >
+			    <%= f.input :date %>
+			 </div>
+			 <div class="form-inputs">   
+			    <%= f.input :event, required: true, autofocus: true %>
+			    <%= f.input :remarks, :label => 'Details' %>
+			  </div>
 
-	<% end %>
+			<% if @edit %>
+				  <div class="form-actions">
+				    <%= f.button :submit, "Update" %>
+				  </div>
+				 <% else %>
+				   <div class="form-actions">
+				    <%= f.button :submit, "Create" %>
+				  </div>
+			<% end %>
+
+			<% end %>
+    
+            </div>
+    </div>
 </div>
