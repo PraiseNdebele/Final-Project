@@ -4,5 +4,6 @@ class Course < ActiveRecord::Base
 	has_many :importants, dependent: :destroy
 	has_many :tdls, dependent: :destroy
 	has_many :uploads, dependent: :destroy
+	validates :end_date, :name, presence: true
 
 end

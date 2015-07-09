@@ -1,6 +1,18 @@
 <div class= "container">
 <%= simple_form_for([current_user, @course]) do |f| %>
-
+	<% if @course.errors.any? %>
+	<div id="error_explanation">
+		<h2> 
+			<%= pluralize(@course.errors.count, "ninjas") %> prohibited
+			this course from being saved:
+		</h2>
+			<ul>
+				<% @course.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+					<% end%>
+			</ul>	
+	</div>
+	<% end %>
   <div class="form-inputs">
     <%= f.input :name, required: true, autofocus: true %>
     <%= f.input :end_date, :label => "Completion date", required: true, :as => :date,:start_year => 2015,:end_year => 2030,:order => [:year] %>
@@ -13,4 +25,3 @@
 <% end %>
 
 </div>
-
