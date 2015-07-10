@@ -16,12 +16,14 @@
                 <!-- BEGAIN SINGLE TEAM SLIDE#1 -->              
                 <div class="col-lg-3 col-md-3 col-sm-4">
                   <div class="single_team wow fadeInUp">
+                  <%= link_to user_course_path(current_user, course) do %>
                     <div class="team_img">
                       <img src="http://thumbs.dreamstime.com/z/stack-books-doodle-vector-32031106.jpg" alt="img">
                     </div>                  
                     <% if course.public || course.user == current_user %>
-                    <h5 class=""><%= link_to course.name, user_course_path(current_user, course) %></h5>                    
+                    <h5 class=""><%= course.name %></h5>                    
                   <% end %>
+                <% end %>
                   </div>
                 </div> 
                 <% end %>                           

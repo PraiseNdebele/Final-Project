@@ -38,9 +38,24 @@
 
 body {
   background-color: #e5e5e5;
-  background-image: url("http://aspireblog.org/wp-content/uploads/2013/04/chalkboard-660x330.jpg");
+  background: url("http://aspireblog.org/wp-content/uploads/2013/04/chalkboard-660x330.jpg") no-repeat center center fixed;
   background-size: cover;
   color: ghostwhite;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.btn_course {
+  background: rgba(0,0,0,0);
+}
+
+.pad-top {
+  padding-top: 150px;
+}
+
+.search_results th {
+  color: white;
 }
 
 .single_team {
